@@ -1,0 +1,28 @@
+body {
+  background-color: lightblue;
+
+  background: linear-gradient(to bottom, #ff3399 10%, #ffff66 101%);
+
+  text-align: center;
+}
+
+h1 {
+  color: white;
+  text-align:center
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+
+p1 {
+	
+	color: green;
+	
+	
+	
+	
+	
+}
+

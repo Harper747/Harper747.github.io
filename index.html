@@ -1,0 +1,118 @@
+<html>
+	<script>
+		var x = 10;
+		var playerImage;
+		var celNumber = 0;
+		
+		
+		
+			function load()
+		{
+		
+		playerImage =  new Image();
+		
+		playerImage.src = "player.png";
+		
+		
+		
+		
+		}
+		
+		
+		function main()
+		{
+		
+			load();
+			
+			var canvas = document.getElementById("canvas")
+			
+			canvas.width = 640;
+			canvas.height = 480;
+			
+			var ctx = canvas.getContext("2d");
+			
+			draw(ctx);
+		}
+		
+	
+		function draw(ctx)
+		{
+			ctx.fillStyle="gray";
+			ctx.fillRect(0,0,ctx.canvas.width, ctx.canvas.height)
+			
+			var celWidth = playerImage.width / 5;
+			var celHeight = playerImage.height / 4;
+
+		
+			
+			ctx.drawImage(playerImage,
+			celNumber * celWidth, 0, // where in source image to draw from (x, y)
+			celWidth, celHeight, // how much of source image to draw (w, h)
+			100, 100, // how far into the canvas to start drawing (x, y)
+			200, 200); // how big on the canvas (w, h)
+			
+			
+			x++;
+			celNumber++
+			
+			if (celNumber > 4)
+			{
+				celNumber = 0;
+				
+			}	
+			window.requestAnimationFrame(function(){draw(ctx);});
+
+		
+		}
+		window.onload = main;
+	</script>
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	 <head>
+		<p> Welcome! </p>
+		<canvas id="canvas" style="background: gray"></canvas/
+	 </head>
+	 
+	 <div>
+		<img style="float:left" src="images/banner.png">
+	 
+	 </div>
+	 
+	 <body>
+		<p1>Hello and welcome to my site!</p1>
+		
+		<p style="font-weight: bold">This site is likely the best place to be</p>
+		
+		<p><span   "font-family: Impact",>Beware of esme, she may kill you!</span>.</p>
+	 
+			<div style="background: #cf88f4; height: 2rem">
+		
+			<div style="float: left">
+			This site is devoted to esme
+
+			</div>
+			
+			<div style="float: right">
+				Home | Contact | CV | Projects
+		</div>
+		
+		</div>
+		
+		
+		
+		
+		
+		
+		<div>
+		<img src="images/happy esme.png">
+		<div>
+	 
+		<div>
+		<img src="images/grumpy esme.png">
+		<div/>
+	 
+		<p><span style = "font-family: Cocogoose New",> Told you!</span>.</p>
+	 </body>
+	 
+	</html>
