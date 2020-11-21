@@ -1,9 +1,11 @@
 body {
-  background-color: lightblue;
+  
+  
+  background-color: #E3E2DF;
 
-  background: linear-gradient(to bottom, #ff3399 10%, #ffff66 101%);
 
-  text-align: center;
+
+  
 }
 
 h1 {
@@ -11,9 +13,17 @@ h1 {
   text-align:center
 }
 
+h3
+{
+	
+	 text-align:center
+}
+
 p {
   font-family: verdana;
   font-size: 20px;
+  text-align:center
+
 }
 
 p1 {
@@ -26,3 +36,69 @@ p1 {
 	
 }
 
+.column {
+  float: left;
+  width: 25%;
+  padding: 5px;
+}
+
+
+.container
+{
+	
+	width: auto;
+	background-color: e3afbc;
+
+	
+	
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #e3afbc;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  font-family: Cocogoose;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 11.1%;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ee4c7c;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ee4c7c;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+//COLOUR SCHEME:
+// 17252A IS BG CLOUR, DARK grey
+// 2B7A78 DARK TURQOISE
+// 3AAFA9 LIGHTER TURQOISE
+// DEF2F1 LIGHT GREY
+// FEFFFF LIGHT LIGHT WHITE
