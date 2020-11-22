@@ -14,58 +14,86 @@ body {
 	padding-top: 10%;
 	padding-right: 3px;
 	padding-left: 25%;
+	padding-bottom: 20%;
 }
 
-h1 {
-  color: white;
-  text-align:center
-}
 
-h3
-{
-	
-	 text-align:center
-}
 
 p {
-  font-family: verdana;
+	color: white;
+	font-family: Vogue Regular;
+	
+	font-size: 38px;
+	float:left;
+	
+	
+	
+}
+
+p1
+{
+	
+	
+	color: white;
+	font-family: Kiona Regular;
+	font-size: 22px;
+	
+	
+}
+	
+
+.FirstShowcase
+{
+	
+	//width: 35%;
+	//height:auto;
+	//text-align:center;
+	
+	padding-left: 5%;
+	padding-right: 5%;
+	float:left;
+}
+
+
+.contactbut
+{
+	
+  position:fixed;
+  border-color: #131313;
+  background-color: #131313;
+  border: none;
+  color: white;
+  right: 1%;
+  top: 2.5%;
+  font-family: Kiona Regular;
   font-size: 20px;
-  text-align:center
-
+  color: #ffffff;
+  cursor: pointer;
+  transition-duration: 0.4s;
+  
+  
 }
 
-p1 {
+.contactbut:hover
+{
 	
-	color: green;
-	
-	
-	
+  color: #818181;
+  border-color: #131313;
 	
 	
 }
-
-
 .buttontop
 {
+  position: fixed;
   background-color: #131313;
   border: none;
   color: white;
   text-align: center;
   font-size: 36px;
   cursor: pointer;
+
 }
 
-
-.column {
-  float: left;
-  width: 25%;
-  padding: 5px;
-}
-
-.menubut {
-width: 5%;
-height: auto;
-}
 
 /* The side navigation menu */
 .sidenav {
@@ -75,11 +103,11 @@ height: auto;
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  font-family: Vogue Regular;
+  font-family: Kiona Regular;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  transition: 0.35s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
 /* The navigation menu links */
@@ -95,6 +123,7 @@ height: auto;
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
   color: #f1f1f1;
+  border-color: #131313
 }
 
 /* Position and style the close button (top right corner) */
@@ -107,7 +136,7 @@ height: auto;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
+main {
   transition: margin-left .5s;
   padding: 20px;
 }
