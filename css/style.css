@@ -1,11 +1,19 @@
 body {
   
   
-  background-color: #E3E2DF;
+  background-color: #131313;
 
 
 
   
+}
+
+
+.logo
+{
+	padding-top: 10%;
+	padding-right: 3px;
+	padding-left: 25%;
 }
 
 h1 {
@@ -36,65 +44,110 @@ p1 {
 	
 }
 
+
+.buttontop
+{
+  background-color: #131313;
+  border: none;
+  color: white;
+  text-align: center;
+  font-size: 36px;
+  cursor: pointer;
+}
+
+
 .column {
   float: left;
   width: 25%;
   padding: 5px;
 }
 
-
-.container
-{
-	
-	width: auto;
-	background-color: e3afbc;
-
-	
-	
+.menubut {
+width: 5%;
+height: auto;
 }
 
-/* Clear floats after image containers */
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
+/* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  font-family: Vogue Regular;
+  background-color: #111; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-.tab {
-  overflow: hidden;
-  border: 1px solid #ccc;
-  background-color: #e3afbc;
-}
-
-/* Style the buttons that are used to open the tab content */
-.tab button {
-  font-family: Cocogoose;
-  background-color: inherit;
-  float: left;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 14px 11.1%;
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
   transition: 0.3s;
 }
 
-/* Change background color of buttons on hover */
-.tab button:hover {
-  background-color: #ee4c7c;
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
 }
 
-/* Create an active/current tablink class */
-.tab button.active {
-  background-color: #ee4c7c;
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
 }
 
-/* Style the tab content */
-.tabcontent {
-  display: none;
-  padding: 6px 12px;
-  border: 1px solid #ccc;
-  border-top: none;
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s;
+  padding: 20px;
 }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.
 
 //COLOUR SCHEME:
 // 17252A IS BG CLOUR, DARK grey

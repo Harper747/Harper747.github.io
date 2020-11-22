@@ -1,0 +1,103 @@
+<html>
+	
+
+	
+
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	 
+	 <div class="container">
+		<img  src="images/banner3.png" >
+		
+		
+	 </div>
+	 
+	 
+	 <div class="tab">
+		<button class="tablinks" onclick="openPage(event, 'About me')" id="defaultOpen">About me</button>
+		<button class="tablinks" onclick="openPage(event, 'Projects')">Projects</button>
+		<button class="tablinks" onclick="openPage(event, 'CV')">CV</button>
+		<button class="tablinks" onclick="openPage(event, 'Contact')" >Contact</button>
+	</div>
+	
+	
+	
+	
+	
+		
+	<div id="About me" class="tabcontent">
+		<h3>About me</h3>
+		<p>Write something cool about yourself</p>
+	</div>
+
+	<div id="Projects" class="tabcontent">
+		<h3>Projects</h3>
+		<p>gdp stuff</p>
+	</div>
+
+	<div id="CV" class="tabcontent">
+		<h3>CV</h3>
+		<p>gmf stuff.</p>
+	</div>
+	
+	<div id="Contact" class="tabcontent">
+		<h3>Contact</h3>
+		<p>Dt stuff.</p>
+	</div>
+	
+	<script>
+		function openPage(evt, pageName) {
+	  
+			var i, tabcontent, tablinks;
+
+	  
+			  tabcontent = document.getElementsByClassName("tabcontent");
+			  for (i = 0; i < tabcontent.length; i++) {
+				tabcontent[i].style.display = "none";
+			  }
+
+			  
+			  tablinks = document.getElementsByClassName("tablinks");
+			  for (i = 0; i < tablinks.length; i++) {
+				tablinks[i].className = tablinks[i].className.replace(" active", "");
+			  }
+
+			  
+			  document.getElementById(pageName).style.display = "block";
+			  evt.currentTarget.className += " active";
+			}
+	
+	
+	
+			
+	
+	document.getElementById("defaultOpen").click();
+	</script>
+	 <body>
+		
+		
+		<p style="font-weight: bold">This site is likely the best place to be</p>
+		
+		<p><span   "font-family: Impact",>Beware of esme, she may kill you!</span>.</p>
+
+			
+			
+			
+			
+			<div style="float: right">
+				Home | Contact | CV | Projects
+		</div>
+		
+		</div>
+		
+		
+		
+		
+		
+		
+
+	 
+		<p><span style = "font-family: Cocogoose New",> Told you!</span>.</p>
+	 </body>
+	 
+	</html>
