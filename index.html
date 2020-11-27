@@ -34,27 +34,135 @@
 	
 	<script>
 		
-/* Set the width of the side navigation to 250px */
+// Set the width of the side navigation to 250px //
 	function openNav() {
 		document.getElementById("mySidenav").style.width = "250px";
 		}
 
-/* Set the width of the side navigation to 0 */
+// Set the width of the side navigation to 0 //
 	function closeNav() {
 		document.getElementById("mySidenav").style.width = "0";
 		}
 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
+
+	
+//Initialise variables for use in functions ~ //
+
+
+
+	var x = 15;
+	var y = 15;
+	
+	var playerImage;
+	var keys = [];
+	
+	var frame = 0;
+	var dir = 0;
+	
+//Loads the spritesheet and assigns it to the variable "playerImage"//
+
+	function load() {
+	  playerImage = new Image();
+	  playerImage.src = "player2.png";
+	  }
+	  
+//Initialises the style of the canvas and divides the spritesheet into each induvidual image using the width and height//
+
+	function draw(ctx){
+	  ctx.fillStyle = '#619e75';
+	  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+	  
+	  var sec = {};
+	  sec.x = 0;
+	  sec.y = 0;
+	  sec.w = playerImage.width / 4;
+	  sec.h = playerImage.height / 4;
+
+	  var clamp = parseInt(frame) % 4;
+	  sec.x += sec.w * clamp;
+	  sec.y += sec.h * dir;
+
+	  ctx.drawImage(playerImage, sec.x, sec.y, sec.w, sec.h,
+		x, y, sec.w, sec.h);
+	  }	
+	  
+//Initialises the different image ticks for each arrow key (also making sure the animation doesn't run if the sprite is not moving//
+
+	function tick(ctx){
+	  var moving = false;
+
+	  if(keys["ArrowLeft"])
+	  {
+		x--;
+		dir = 1;
+		moving = true;
+	  }
+	  else if(keys["ArrowRight"])
+	  {
+		x++;
+		dir = 0;
+		moving = true;
+	  }
+
+	  if(keys["ArrowUp"])
+	  {
+		y--;
+		dir = 2;
+		moving = true;
+	  }
+	  else if(keys["ArrowDown"])
+	  {
+		y++;
+		dir = 3;
+		moving = true;
+	  }
+
+	  frame += 0.1;
+
+	  if(!moving)
+	  {
+		frame = 0;
+	  }
+
+	  draw(ctx);
+	  window.requestAnimationFrame(function(){tick(ctx);});
+	  }
+
+
+
+
+
+//creates the canvas and passes all the functions created prior to it 
+	function main(){
+	 
+	  var canvas = document.getElementById("canvas");
+
+	 
+	  canvas.width = 640;
+	  canvas.height = 480;
+
+	  var ctx = canvas.getContext('2d');
+
+	  load();
+
+	 
+	  tick(ctx);
+	  }
+	  
+//makes it so the canvas will register when a key is being pressed and run the function accordingly
+
+	function keydown(event){
+	  keys[event.key] = true;
+	  }
+
+	function keyup(event){
+	  keys[event.key] = false;
+	  }
+
+	window.onload = main;
+	window.addEventListener("keydown", keydown);
+	window.addEventListener("keyup", keyup);
 		
 		
 		
@@ -71,7 +179,7 @@
 		 
 		<div class = "FirstShowcase">
 			
-			<img src = "images/Skyrim.png" >
+			<img src = "images/skyrim.png" >
 
 		</div>
 		
@@ -87,14 +195,32 @@
 		
 		
 		
-		<div>
-	
+		<div class = "spriteShowcase">
+			
+			
+			<div class = "canvastext">
+		
+			
+				<p> Sprite creation and texture mapping <p>
+				<p1> This is quite obviously an image of skyrim.
+					<br>
+					However when I actually have material to fill 
+					<br>
+					this page with, I'll replace both the image and
+					<br>
+					this text.</p1>	
+			</div>
+			<canvas id="canvas" style="background: gray"></canvas/>
+		
+		</div>
+		
+		
+
 
 	</body>
 	<footer>
 		
-		
-		
+	
 	<footer>
 	 
 	</html>
