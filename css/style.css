@@ -1,80 +1,109 @@
-body {
-  
-  
+body 
+{
   background-color: #131313;
-
-
-
-  
 }
 
 
 .logo
 {
 	padding-top: 10%;
-	padding-right: 3px;
+	padding-right: 25%;
 	padding-left: 25%;
 	padding-bottom: 20%;
 }
 
+.contactlogo
 
+{
+	
+	padding-top: 4%;
+	padding-right: 25%;
+	padding-left: 22%;
+	
+}
 
-p {
+.phoneno
+{
 	color: white;
-	font-family: Vogue Regular;
-	
-	font-size: 38px;
-	float:left;
-	
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 34px;
 	
 	
 }
 
-p1
+.paragraph
+{
+	color: white;
+	font-family: 'Cinzel', serif;
+	font-size: 40px;
+	
+}
+
+.paragraph1
 {
 	
-	
 	color: white;
-	font-family: Kiona Regular;
-	font-size: 22px;
-	
-	
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 34px;
 }
 	
 
 .FirstShowcase
 {
-	
-	//width: 35%;
-	//height:auto;
+	width: 90%;
+	height: 40rem;
 	//text-align:center;
 	
 	padding-left: 5%;
 	padding-right: 5%;
 	float:left;
+	
 }
 
-.spriteShowcase
+.ShowcaseImage
+{
+	float: left;
+	width: 61%;
+	text-align:left;
+	
+}
+
+.ShowcaseText
 {
 	
-	
-	padding-top: 20%;
+	text-align:center;
+	float:left;
+	width: 38%;
+	height: 30rem;
+	float: left;
+	padding-left: 1%;
+}
+
+.SpriteShowcase
+{
+	padding: 5%;
+	width: 90%;
 	text-align: right;
-	padding-right: 5%;
-	padding-left: 5%;
+	float: left;
 }
 
 
 .canvastext
 {
-	text-align:left;
-	
-	padding-left: 5%;
-	
+	float: left;
+	width: 52%;
+	padding-right: 2%;
+	text-align:center;
+	padding-right: 5%;
 	
 }
 
-
+.testcanvas
+{
+	width: 38%;
+	height: 30rem;
+	float: left;
+}
 
 .contactbut
 {
@@ -86,21 +115,20 @@ p1
   color: white;
   right: 1%;
   top: 2.5%;
-  font-family: Kiona Regular;
-  font-size: 20px;
+  font-family: 'Alegreya Sans SC', sans-serif;
+  font-size: 24px;
   color: #ffffff;
   cursor: pointer;
   transition-duration: 0.4s;
-  
   
 }
 
 .contactbut:hover
 {
 	
+	
   color: #818181;
   border-color: #131313;
-	
 	
 }
 .buttontop
@@ -117,14 +145,15 @@ p1
 
 
 /* The side navigation menu */
-.sidenav {
+.sidenav 
+{
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  font-family: Kiona Regular;
+  font-family: 'Alegreya Sans SC', sans-serif;
   background-color: #111; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
@@ -132,7 +161,8 @@ p1
 }
 
 /* The navigation menu links */
-.sidenav a {
+.sidenav a 
+{
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 25px;
@@ -142,22 +172,25 @@ p1
 }
 
 /* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
+.sidenav a:hover 
+{
   color: #f1f1f1;
   border-color: #131313
 }
 
 /* Position and style the close button (top right corner) */
-.sidenav .closebtn {
+.sidenav .closebtn 
+{
   position: absolute;
   top: 0;
   right: 25px;
-  font-size: 36px;
+  font-size: 40px;
   margin-left: 50px;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-main {
+main 
+{
   transition: margin-left .5s;
   padding: 20px;
 }

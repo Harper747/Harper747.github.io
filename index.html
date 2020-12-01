@@ -2,24 +2,16 @@
 	
 
 	
-
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		
+		<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+		
+		<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
+		
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 
-		 
+	
 
-		 
-		
-		<div id="mySidenav" class="sidenav">
-		  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-		  <a href="#">About</a>
-		  <a href="Projects.html">Projects</a>
-		  <a href="#">CV</a>
-		  <a href="#">Contact</a>
-			</div>
-
-		
-		<button class = "buttontop" onclick="openNav()" >&#9776;</button>
-		<button class = "contactbut" onclick="openNav()">Contact</button>
 		
 	
 	
@@ -92,26 +84,26 @@
 	function tick(ctx){
 	  var moving = false;
 
-	  if(keys["ArrowLeft"])
+	  if(keys["a"])
 	  {
 		x--;
 		dir = 1;
 		moving = true;
 	  }
-	  else if(keys["ArrowRight"])
+	  else if(keys["d"])
 	  {
 		x++;
 		dir = 0;
 		moving = true;
 	  }
 
-	  if(keys["ArrowUp"])
+	  if(keys["w"])
 	  {
 		y--;
 		dir = 2;
 		moving = true;
 	  }
-	  else if(keys["ArrowDown"])
+	  else if(keys["s"])
 	  {
 		y++;
 		dir = 3;
@@ -170,48 +162,67 @@
 
 	</script>
 	<body>
+		<div id="mySidenav" class="sidenav">
+			<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="Index.html">About</a>
+			<a href="Projects.html">Projects</a>
+			<a href="CV.html">CV</a>
+			<a href="contact.html">Contact</a>
+		</div>
+
+		
+		<button class = "buttontop" onclick="openNav()" >&#9776;</button>
+		<button class = "contactbut" onclick="openNav()">Contact</button>
+		
 		<div class = "Logo">
 		
-			<img src = "images/title.png" style="width:60%;height:auto;" alt="title">
+			<img src = "images/title.png" style="width:100%;height:auto;" alt="title">
 		
 		</div>
 		
-		 
-		<div class = "FirstShowcase">
-			
-			<img src = "images/skyrim.png" >
 
-		</div>
+		<div class = "FirstShowcase">
 		
-		
-		<p> Comprehensive Modelling Skills <p>
-		<p1> This is quite obviously an image of skyrim.
-			<br>
-			However when I actually have material to fill 
-			<br>
-			this page with, I'll replace both the image and
-			<br>
-			this text.</p1>	
-		
-		
-		
-		<div class = "spriteShowcase">
-			
-			
-			<div class = "canvastext">
-		
-			
-				<p> Sprite creation and texture mapping <p>
-				<p1> This is quite obviously an image of skyrim.
-					<br>
-					However when I actually have material to fill 
-					<br>
-					this page with, I'll replace both the image and
-					<br>
-					this text.</p1>	
+			<div class = "ShowcaseImage">
+				<img src = "images/skyrim.png" >
 			</div>
-			<canvas id="canvas" style="background: gray"></canvas/>
-		
+			
+			<div class = "ShowcaseText">
+				<span class="paragraph">
+				Comprehensive Modelling Skills
+				</span>
+				<br><br><br><br><br><br><br><br>
+				<span class="paragraph1">
+				This is quite obviously an image of
+				<br>
+				skyrim. However when I actually have 
+				<br>
+				material to fill  this page with, I'll replace 
+				<br>
+				both the image and this text.	
+				</span>
+			</div>
+		</div>
+
+		<div class = "SpriteShowcase">
+			<div class = "canvastext">
+				<span class="paragraph">
+					Sprite creation and animation
+				</span>
+				<br><br><br><br><br><br>
+				<span class="paragraph1">
+					This is a random spritesheet I made
+					<br>
+					a while ago that I'm using in order
+					<br>
+					to demonstrate use of the canvas feature
+					<br>
+					on html. Use w, a, s, and d to move around.
+				</span>
+			</div>
+			<div class="testcanvas">
+				<canvas id="canvas" style="background: gray"></canvas/>
+			</div>
 		</div>
 		
 		
