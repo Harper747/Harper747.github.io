@@ -10,8 +10,26 @@ body
 	padding-right: 25%;
 	padding-left: 25%;
 	padding-bottom: 20%;
+	
 }
 
+.Projectslogo
+{
+	padding-top: 10%;
+	padding-right: 25%;
+	padding-left: 25%;
+	padding-bottom: 20%;
+	
+}
+
+.Cvlogo
+
+{
+	padding-right: 25%;
+	padding-left: 25%;
+	
+	
+}
 .contactlogo
 
 {
@@ -35,9 +53,6 @@ body
 	font-family: 'Montserrat', sans-serif;
 	font-size: 22px;
 	
-	
-	
-	
 }
 
 .icons
@@ -56,6 +71,76 @@ body
 	font-size: 34px;
 	text-align: right;
 	
+	
+}
+
+.scrollmenu
+
+{
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  background-color: #111111;
+  overflow: auto;
+  white-space: nowrap;
+
+}
+
+
+.scrollmenu a 
+{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding-bot: 14px;
+  padding-top: 14px;
+  padding-left: 9.7%;
+  padding-right: 9.7%;
+  text-decoration: none;
+}
+
+.scrollmenu a:hover 
+{
+  background-color: #777;
+  color: #000000;
+}
+
+.scrollmenuGCSE
+
+{
+  font-family: 'Cinzel', serif;
+  font-size: 40px;
+  background-color: #111111;
+  overflow: auto;
+  white-space: nowrap;
+
+}
+
+.scrollmenuGCSE a 
+{
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding-bot: 14px;
+  padding-top: 14px;
+  padding-left: 9.7%;
+  padding-right: 9.7%;
+  text-decoration: none;
+}
+
+.scrollmenuGCSE a:hover 
+{
+  background-color: #777;
+  color: #000000;
+}
+
+.disclaimer
+{
+	
+	color: #818181;
+	font-family: 'Alegreya Sans SC', sans-serif;
+	font-size: 14px;
+	text-align: center;
+	padding-left: 35%;
 	
 }
 
