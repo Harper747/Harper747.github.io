@@ -93,8 +93,8 @@ body
   text-align: center;
   padding-bot: 14px;
   padding-top: 14px;
-  padding-left: 9.7%;
-  padding-right: 9.7%;
+  padding-left: 9.5%;
+  padding-right: 9.5%;
   text-decoration: none;
 }
 
@@ -104,6 +104,20 @@ body
   color: #000000;
 }
 
+.column
+{
+  float: left;
+  width: 32.8%;
+  padding: 5px;
+}
+
+
+.row::after 
+{
+  content: "";
+  clear: both;
+  display: table;
+}
 .scrollmenuGCSE
 
 {
@@ -122,11 +136,28 @@ body
   text-align: center;
   padding-bot: 14px;
   padding-top: 14px;
-  padding-left: 9.7%;
-  padding-right: 9.7%;
+  padding-left: 9.6%;
+  padding-right: 9.6%;
   text-decoration: none;
 }
 
+.Alogo
+{
+	padding-top: 3%;
+	width: 55%;
+	height: auto;
+	
+	
+}
+
+.Uno
+{
+	
+	width: 30%;
+	height: auto:
+	
+	
+}
 .scrollmenuGCSE a:hover 
 {
   background-color: #777;
@@ -168,6 +199,8 @@ body
 	font-size: 26px;
 	text-align: center;
 }
+	
+	
 	
 .FirstShowcase
 {
