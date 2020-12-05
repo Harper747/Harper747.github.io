@@ -141,23 +141,34 @@ body
   text-decoration: none;
 }
 
-.Alogo
+.flowimg
 {
-	padding-top: 3%;
-	width: 55%;
-	height: auto;
-	
+	width: 28%;
+	height: 30rem;
+	float: left;
+}
+
+.Alvl
+{
+	padding: 5%;
+	padding-bottom: 5%;
+	width: 90%;
+	text-align: right;
+	float: left;
 	
 }
 
-.Uno
+.Alvltext
 {
-	
-	width: 30%;
-	height: auto:
-	
+	float: left;
+	width: 52%;
+	padding-right: 2%;
+	text-align:center;
+	padding-right: 5%;
 	
 }
+
+
 .scrollmenuGCSE a:hover 
 {
   background-color: #777;
@@ -189,6 +200,15 @@ body
 	color: white;
 	font-family: 'Alegreya Sans SC', sans-serif;
 	font-size: 34px;
+}
+
+
+.paragraphbig
+{
+	
+	color: white;
+	font-family: 'Cinzel', serif;
+	font-size: 74px;
 }
 	
 .paragraph2

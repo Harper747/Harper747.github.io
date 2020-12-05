@@ -37,6 +37,149 @@
 		document.getElementById("mySidenav").style.width = "0";
 		}
 		
+		//Initialise variables for use in functions ~ //
+
+	var bootclip = new Audio();
+	bootclip.src = "bootsound.wav"
+	
+	var walk = new Audio();
+	walk.src = "runningsound.wav"
+	
+
+	var x = 15;
+	var y = 15;
+	
+	var playerImage;
+	var keys = [];
+	
+	var frame = 0;
+	var dir = 0;
+	
+//Loads the spritesheet and assigns it to the variable "playerImage"//
+
+	function load() {
+	  playerImage = new Image();
+	  playerImage.src = "player2.png";
+	  }
+	  
+//Initialises the style of the canvas and divides the spritesheet into each induvidual image using the width and height//
+
+	function draw(ctx){
+	  ctx.fillStyle = '#619e75';
+	  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+	  
+	  var sec = {};
+	  sec.x = 0;
+	  sec.y = 0;
+	  sec.w = playerImage.width / 4;
+	  sec.h = playerImage.height / 4;
+
+	  var clamp = parseInt(frame) % 4;
+	  sec.x += sec.w * clamp;
+	  sec.y += sec.h * dir;
+
+	  ctx.drawImage(playerImage, sec.x, sec.y, sec.w, sec.h,
+		x, y, sec.w, sec.h);
+	  }	
+	  
+//Initialises the different image ticks for each arrow key (also making sure the animation doesn't run if the sprite is not moving//
+
+	function tick(ctx){
+	  var moving = false;
+
+	  if(keys["a"])
+	  {
+		x--;
+		dir = 1;
+		moving = true;
+		walk.volume = 0.1;
+		walk.play();
+		
+	  }
+	  else if(keys["d"])
+	  {
+		x++;
+		dir = 0;
+		moving = true;
+		walk.volume = 0.1;
+		walk.play();
+	  }
+
+	  if(keys["w"])
+	  {
+		y--;
+		dir = 2;
+		moving = true;
+		walk.volume = 0.1;
+		walk.play();
+	  }
+	  
+	  else if(keys["s"])
+	  {
+		y++;
+		dir = 3;
+		moving = true;
+		walk.volume = 0.1;
+		walk.play();
+	  }
+	  
+
+
+	  frame += 0.1;
+
+	  if(!moving)
+	  {
+		frame = 0;
+	  }
+
+	  draw(ctx);
+	  window.requestAnimationFrame(function(){tick(ctx);});
+	  }
+
+
+
+
+
+//creates the canvas and passes all the functions created prior to it 
+	function main(){
+	 
+	  var canvas = document.getElementById("canvas");
+
+	 
+	  canvas.width = 640;
+	  canvas.height = 480;
+
+	  var ctx = canvas.getContext('2d');
+
+	  load();
+
+	 
+	  tick(ctx);
+	  }
+	  
+//makes it so the canvas will register when a key is being pressed and run the function accordingly
+
+	function keydown(event){
+	  keys[event.key] = true;
+	  }
+
+	function keyup(event){
+	  keys[event.key] = false;
+	  }
+
+	window.onload = main;
+	window.addEventListener("keydown", keydown);
+	window.addEventListener("keyup", keyup);
+		
+		
+		
+		
+	function buttonsound()
+	  {
+	  
+	bootclip.play();
+	
+	  }
 		
 		
 		
@@ -50,7 +193,7 @@
 	
 		<div class = "CvLogo">
 		
-			<img src = "images/cv.png" style="width:100%;height:auto; padding-bottom: 5%;" alt="title">
+			<img src = "images/cvuni.png" style="width:100%;height:auto; padding-bottom: 5%;" alt="title">
 		
 		</div>
 		
@@ -61,7 +204,82 @@
 
 		</div>
 		
+		<div style = "padding-top: 5%; padding-left: 12%; padding-bottom: 5%;">
+		<span class = "paragraphbig">
+		BACHELOR'S DEGREE IN GAMES DESIGN
+		</span>
+		</div>
+		
+		<div class = "FirstShowcase">
+		
+			<div class = "ShowcaseImage">
+				<img src = "images/skyrim.png" >
+			</div>
+			
+			<div class = "ShowcaseText">
+				<span class="paragraph">
+				Comprehensive Modelling Skills
+				</span>
+				<br><br><br><br><br><br><br><br>
+				<span class="paragraph1">
+				This is quite obviously an image of
+				<br>
+				skyrim. However when I actually have 
+				<br>
+				material to fill  this page with, I'll replace 
+				<br>
+				both the image and this text.	
+				</span>
+			</div>
+		</div>
 
+		<div class = "SpriteShowcase">
+		
+			<div class = "canvastext">
+				<span class="paragraph">
+					Sprite creation and animation
+				</span>
+				<br><br><br><br><br><br>
+				<span class="paragraph1">
+					This is a random spritesheet I made
+					<br>
+					a while ago that I'm using in order
+					<br>
+					to demonstrate use of the canvas feature
+					<br>
+					on html. Use w, a, s, and d to move around.
+					<br>
+					walking sounds will play when it moves, too.
+				</span>
+			</div>
+			<div class="testcanvas">
+				<canvas id="canvas"</canvas/>
+			</div>
+		</div>
+		
+		
+		<div class = "FirstShowcase">
+		
+			<div class = "ShowcaseImage">
+				<img src = "images/celeste.png" >
+			</div>
+			
+			<div class = "ShowcaseText">
+				<span class="paragraph">
+				Engaging Level design
+				</span>
+				<br><br><br><br><br><br><br><br>
+				<span class="paragraph1">
+				This is an image of a game called Celeste.
+				<br>
+				Again it's not mine, but it's a game
+				<br>
+				infamous for its engaging level design.
+				<br>
+				I'll update it once I have the material.	
+				</span>
+			</div>
+		</div>
 	
 	
 	</body>
