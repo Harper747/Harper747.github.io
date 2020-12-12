@@ -39,12 +39,46 @@
 		
 		
 		
+	function fadeInPage() {
+		 if (!window.AnimationEvent) { return; }
+			var fader = document.getElementById('fader');
+			fader.classList.add('fade-out');
+	}
+	
+	
+	document.addEventListener('DOMContentLoaded', function() {
 		
+	
+		for (var idx=0; idx<anchors.length; idx+=1) {
+			  if (anchors[idx].hostname !== window.location.hostname ||
+					anchors[idx].pathname === window.location.pathname) {
+			continue;
+		}
+		anchors[idx].addEventListener('click', function(event) {
+			var fader = document.getElementById('fader'),
+				anchor = event.currentTarget;
+			
+			var listener = function() {
+				window.location = anchor.href;
+				fader.removeEventListener('animationend', listener);
+			};
+			fader.addEventListener('animationend', listener);
+			
+			event.preventDefault();
+			  fader.classList.add('fade-in');
+			});
+		}
+	});		
 		
 		
 	
 
 	</script>
+	
+	<svg id="fader"></svg>
+	<script>
+        fadeInPage();
+    </script>
 	
 	<body>
 	
@@ -73,7 +107,7 @@
 			
 			course is completed. Please feel free to browse the various sections of this page to learn more about me. Below are some examples
 			
-			of my work in Photoshop (These are actually mine, I made them).
+			of my work in Photoshop.
 
 			</span>
 			
