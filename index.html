@@ -1,7 +1,4 @@
 <html>
-	
-
-	
 		<link rel="preconnect" href="https://fonts.gstatic.com">
 		
 		<link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
@@ -9,214 +6,185 @@
 		<link href="https://fonts.googleapis.com/css2?family=Alegreya+Sans+SC:wght@300&display=swap" rel="stylesheet">
 		
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+	
+		<script>
+			
+	// Set the width of the side navigation to 250px //
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "250px";
+			}
 
-	
+	// Set the width of the side navigation to 0 //
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			}
 
 		
-	
-	
-	
-	
-	
-	
-	
+	//Initialise variables for use in functions ~ //
+
+		var bootclip = new Audio();
+		bootclip.src = "bootsound.wav"
 		
-	
-	
-	
-	<script>
+		var walk = new Audio();
+		walk.src = "runningsound.wav"
 		
-// Set the width of the side navigation to 250px //
-	function openNav() {
-		document.getElementById("mySidenav").style.width = "250px";
+
+		var x = 15;
+		var y = 15;
+		
+		var playerImage;
+		var keys = [];
+		
+		var frame = 0;
+		var dir = 0;
+		
+	//Loads the spritesheet and assigns it to the variable "playerImage"//
+
+		function load() {
+		  playerImage = new Image();
+		  playerImage.src = "player2.png";
+		  }
+		  
+	//Initialises the style of the canvas and divides the spritesheet into each induvidual image using the width and height//
+
+		function draw(ctx){
+		  ctx.fillStyle = '#619e75';
+		  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+		  
+		  var sec = {};
+		  sec.x = 0;
+		  sec.y = 0;
+		  sec.w = playerImage.width / 4;
+		  sec.h = playerImage.height / 4;
+
+		  var clamp = parseInt(frame) % 4;
+		  sec.x += sec.w * clamp;
+		  sec.y += sec.h * dir;
+
+		  ctx.drawImage(playerImage, sec.x, sec.y, sec.w, sec.h,
+			x, y, sec.w, sec.h);
+		  }	
+		  
+	//Initialises the different image ticks for each arrow key (also making sure the animation doesn't run if the sprite is not moving)//
+
+		function tick(ctx){
+		  var moving = false;
+
+		  if(keys["a"])
+		  {
+			x--;
+			dir = 1;
+			moving = true;
+			walk.volume = 0.1;
+			walk.play();
+			
+		  }
+		  else if(keys["d"])
+		  {
+			x++;
+			dir = 0;
+			moving = true;
+			walk.volume = 0.1;
+			walk.play();
+		  }
+
+		  if(keys["w"])
+		  {
+			y--;
+			dir = 2;
+			moving = true;
+			walk.volume = 0.1;
+			walk.play();
+		  }
+		  
+		  else if(keys["s"])
+		  {
+			y++;
+			dir = 3;
+			moving = true;
+			walk.volume = 0.1;
+			walk.play();
+		  }
+		  
+
+
+		  frame += 0.1;
+
+		  if(!moving)
+		  {
+			frame = 0;
+		  }
+
+		  draw(ctx);
+		  window.requestAnimationFrame(function(){tick(ctx);});
+		  }
+
+	//creates the canvas and passes all the functions created prior to it// 
+		function main(){
+		 
+		  var canvas = document.getElementById("canvas");
+
+		 
+		  canvas.width = 640;
+		  canvas.height = 480;
+
+		  var ctx = canvas.getContext('2d');
+
+		  load();
+
+		 
+		  tick(ctx);
+		  }
+		  
+	//makes it so the canvas will register when a key is being pressed and run the function accordingly//
+
+		function keydown(event){
+		  keys[event.key] = true;
+		  }
+
+		function keyup(event){
+		  keys[event.key] = false;
+		  }
+
+		window.onload = main;
+		window.addEventListener("keydown", keydown);
+		window.addEventListener("keyup", keyup);
+			
+	//initialises the animations set up in the function below//
+		function fadeInPage()
+		{
+			 if (!window.AnimationEvent) { return; }
+				var fader = document.getElementById('fader');
+				fader.classList.add('fade-out');
 		}
-
-// Set the width of the side navigation to 0 //
-	function closeNav() {
-		document.getElementById("mySidenav").style.width = "0";
-		}
-
-	
-
-	
-//Initialise variables for use in functions ~ //
-
-	var bootclip = new Audio();
-	bootclip.src = "bootsound.wav"
-	
-	var walk = new Audio();
-	walk.src = "runningsound.wav"
-	
-
-	var x = 15;
-	var y = 15;
-	
-	var playerImage;
-	var keys = [];
-	
-	var frame = 0;
-	var dir = 0;
-	
-//Loads the spritesheet and assigns it to the variable "playerImage"//
-
-	function load() {
-	  playerImage = new Image();
-	  playerImage.src = "player2.png";
-	  }
-	  
-//Initialises the style of the canvas and divides the spritesheet into each induvidual image using the width and height//
-
-	function draw(ctx){
-	  ctx.fillStyle = '#619e75';
-	  ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
-	  
-	  var sec = {};
-	  sec.x = 0;
-	  sec.y = 0;
-	  sec.w = playerImage.width / 4;
-	  sec.h = playerImage.height / 4;
-
-	  var clamp = parseInt(frame) % 4;
-	  sec.x += sec.w * clamp;
-	  sec.y += sec.h * dir;
-
-	  ctx.drawImage(playerImage, sec.x, sec.y, sec.w, sec.h,
-		x, y, sec.w, sec.h);
-	  }	
-	  
-//Initialises the different image ticks for each arrow key (also making sure the animation doesn't run if the sprite is not moving//
-
-	function tick(ctx){
-	  var moving = false;
-
-	  if(keys["a"])
-	  {
-		x--;
-		dir = 1;
-		moving = true;
-		walk.volume = 0.1;
-		walk.play();
-		
-	  }
-	  else if(keys["d"])
-	  {
-		x++;
-		dir = 0;
-		moving = true;
-		walk.volume = 0.1;
-		walk.play();
-	  }
-
-	  if(keys["w"])
-	  {
-		y--;
-		dir = 2;
-		moving = true;
-		walk.volume = 0.1;
-		walk.play();
-	  }
-	  
-	  else if(keys["s"])
-	  {
-		y++;
-		dir = 3;
-		moving = true;
-		walk.volume = 0.1;
-		walk.play();
-	  }
-	  
-
-
-	  frame += 0.1;
-
-	  if(!moving)
-	  {
-		frame = 0;
-	  }
-
-	  draw(ctx);
-	  window.requestAnimationFrame(function(){tick(ctx);});
-	  }
-
-
-
-
-
-//creates the canvas and passes all the functions created prior to it 
-	function main(){
-	 
-	  var canvas = document.getElementById("canvas");
-
-	 
-	  canvas.width = 640;
-	  canvas.height = 480;
-
-	  var ctx = canvas.getContext('2d');
-
-	  load();
-
-	 
-	  tick(ctx);
-	  }
-	  
-//makes it so the canvas will register when a key is being pressed and run the function accordingly
-
-	function keydown(event){
-	  keys[event.key] = true;
-	  }
-
-	function keyup(event){
-	  keys[event.key] = false;
-	  }
-
-	window.onload = main;
-	window.addEventListener("keydown", keydown);
-	window.addEventListener("keyup", keyup);
 		
 		
+		document.addEventListener('DOMContentLoaded', function() {
+			
 		
-		
-	function buttonsound()
-	  {
-	  
-	bootclip.play();
-	
-	  }
-		
-		
-	function fadeInPage() {
-		 if (!window.AnimationEvent) { return; }
-			var fader = document.getElementById('fader');
-			fader.classList.add('fade-out');
-	}
-	
-	
-	document.addEventListener('DOMContentLoaded', function() {
-		
-    
-		for (var idx=0; idx<anchors.length; idx+=1) {
-			  if (anchors[idx].hostname !== window.location.hostname ||
-					anchors[idx].pathname === window.location.pathname) {
-			continue;
-        }
-		anchors[idx].addEventListener('click', function(event) {
-            var fader = document.getElementById('fader'),
-                anchor = event.currentTarget;
-            
-            var listener = function() {
-                window.location = anchor.href;
-                fader.removeEventListener('animationend', listener);
-            };
-            fader.addEventListener('animationend', listener);
-            
-            event.preventDefault();
-			  fader.classList.add('fade-in');
-			});
-		}
-	});
+			for (var idx=0; idx<anchors.length; idx+=1) {
+				  if (anchors[idx].hostname !== window.location.hostname ||
+						anchors[idx].pathname === window.location.pathname) {
+				continue;
+			}
+			anchors[idx].addEventListener('click', function(event) {
+				var fader = document.getElementById('fader'),
+					anchor = event.currentTarget;
+				
+				var listener = function() {
+					window.location = anchor.href;
+					fader.removeEventListener('animationend', listener);
+				};
+				fader.addEventListener('animationend', listener);
+				
+				event.preventDefault();
+				  fader.classList.add('fade-in');
+				});
+			}
+		});
 
-	</script>
-	
+		</script>
+		
 	<svg id="fader"></svg>
 	<script>
         fadeInPage();
@@ -233,7 +201,7 @@
 
 		
 		<button class = "buttontop" onclick="openNav()" >&#9776;</button>
-		<button class = "contactbut" onclick=" buttonsound()">Contact</button>
+		<button class = "contactbut" onclick="document.location = 'contact.html'">Contact</button>
 		
 		<div class = "Logo">
 		
@@ -317,7 +285,7 @@
 
 	</body>
 	
-	<div class = "footer1">
+	<div class = "footer1"  style = "padding-left: 7%; ">
 		<div class = "icons">
 			
 			<div class = "phone">
@@ -342,7 +310,7 @@
 			<div class = "mail">
 				<img src = "images/location.png" style = "width:5%; height: auto;">
 				<span class = "contactinfo">
-				30 Cherford road, Bournemouth, BH11 8SU
+				Bournemouth University
 				<br><br><br>
 				</span>
 			</div>
