@@ -3,7 +3,8 @@ body
   background-color: #131313;
 }
 
-#fader {
+#fader 
+{
     position: fixed;
     top: 0;
     left: 0;
